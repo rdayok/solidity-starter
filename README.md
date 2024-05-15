@@ -88,7 +88,7 @@ the owner of the smart contract to person certain actions - like calling the get
    13
    ```
 
-## Author
+## Authorg
 
 Retnaa Maxwell Dayok  
 [@rdayok](https://www.linkedin.com/in/retnaa-dayok-45207219b/)
