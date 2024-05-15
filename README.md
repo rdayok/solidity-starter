@@ -1,7 +1,24 @@
-# Hello World! in Solidity
+# GreatestNumber in Solidity
+
+A solidity program that finds the greatest number among the given set of numbers.
+
+## Description
+
+The smart contract written in solidy is required to have a modifier to help allow 
+the owner of the smart contract to person certain actions - like calling the getGreatestNumber function.
+
+   ```solidity
+    modifier onlyOwner{
+        require (owner == msg.sender, "Only the owner of this contract can access");
+        _;
+    }
+   ```
+   This is the syntax of a modifier function.
 
 
-## Install
+## Getting started
+
+### Install
 
 1. Install [Node.js](https://nodejs.org)
 
@@ -24,29 +41,19 @@
 
    After initialization, you will find two folders called `contracts` and `migrations`. Contracts go in the `contracts` folder while contract deployment settings go in `migrations`.
 
-2. The "Hello World!" contract
+2. The "GreatestNumber!" contract
 
-   This is an example of a "Hello World!" contract in Solidity. 
-   "HelloWorld.sol" in `contracts` contains the following code:
-
-   ```solidity
-   // SPDX-License-Identifier: MIT
-   // compiler version must be greater than or equal to 0.8.17 and less than 0.9.0
-   pragma solidity ^0.8.17;
-   
-   contract HelloWorld {
-       string public greet = "Hello World!";
-   }   
-   ```
+   This is an example of a smart contract in solidity showing how modifiers work.
+   "GreatestNumber.sol" in `contracts` contains the code.
 
 3. Prepare the migration
 
    "2_deploy_migration.js" in `migrations` contains the following code:
 
    ```javascript
-   var HelloWorld = artifacts.require("HelloWorld");
+   var GreatestNumber = artifacts.require("GreatestNumber");
    module.exports = function(deployer) {
-     deployer.deploy(HelloWorld);
+     deployer.deploy(GreatestNumber);
    }
    ```
 
@@ -69,12 +76,19 @@
    In the interactive Truffle console, run the following commands:
 
    ```javascript
-   let instance = await HelloWorld.deployed()
-   instance.greet()
+   let instance = await GreatestNumber.deployed()
+   instance.setNumbers(4, 3, 10, 13)
+   instance.getGreatestNumber()
    ```
+   Note that 4, 3, 10 and 13 provided can be any set of numbers you desire.
 
    Then you will see:
 
    ```bash
-   'Hello World!'
+   13
    ```
+
+## Author
+
+Retnaa Maxwell Dayok  
+[@rdayok](https://www.linkedin.com/in/retnaa-dayok-45207219b/)

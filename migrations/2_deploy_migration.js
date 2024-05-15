@@ -1,4 +1,4 @@
-var HelloWorld = artifacts.require("HelloWorld");
+var BreatestNumber = artifacts.require("GreatestNumber");
 module.exports = function(deployer) {
-  deployer.deploy(HelloWorld);
+  deployer.deploy(GreatestNumber);
 }
